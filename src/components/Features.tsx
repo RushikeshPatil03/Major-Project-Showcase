@@ -11,17 +11,16 @@ import {
   Radio, 
   KeyRound,
   ShieldCheck,
-  Check
+  ChevronRight,
+  ChevronLeft,
+  Check,
+  Sliders
 } from 'lucide-react';
 
 export const Features: React.FC = () => {
-  const [filter, setFilter] = useState<string>('All');
-
-  const categories = ['All', 'Security', 'Verification', 'Architecture', 'Experience'];
-
-  const filteredFeatures = filter === 'All' 
-    ? projectConfig.features 
-    : projectConfig.features.filter(f => f.category === filter);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const features = projectConfig.features;
+  const current = features[currentIndex];
 
   const getFeatureIcon = (iconName: string) => {
     switch (iconName) {
@@ -65,77 +64,137 @@ export const Features: React.FC = () => {
     }
   };
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : features.length - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < features.length - 1 ? prev + 1 : 0));
+  };
+
   return (
     <section id="features" className="py-20 md:py-28 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/70 border border-cyan-800/80 text-xs font-semibold text-cyan-400 mb-4">
+            <Sliders className="w-3.5 h-3.5" />
             <span>Verified System Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Engineered for Uncompromising Security & Scale
+            Engineered for Security, Concurrency & Trust
           </h2>
           <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            Every capability listed has been built and tested inside the SmartAttend repository.
+            Browse through each verified system module with zero clutter.
           </p>
-
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                  filter === cat
-                    ? 'bg-cyan-500 text-navy-950 shadow-md shadow-cyan-500/30'
-                    : 'bg-navy-900/80 text-slate-400 hover:text-slate-200 border border-slate-800'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
         </div>
 
-        {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredFeatures.map((feat) => (
-            <div
+        {/* Feature Quick Selector Pills */}
+        <div className="flex overflow-x-auto pb-4 mb-8 gap-2.5 scrollbar-none sm:justify-center">
+          {features.map((feat, idx) => (
+            <button
               key={feat.id}
-              className="glass-panel glass-panel-hover p-6 rounded-3xl border-slate-700/60 flex flex-col justify-between"
+              onClick={() => setCurrentIndex(idx)}
+              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
+                currentIndex === idx
+                  ? 'bg-cyan-500 text-navy-950 border-cyan-400 shadow-md shadow-cyan-500/30 font-bold scale-[1.02]'
+                  : 'bg-navy-950/80 text-slate-400 hover:text-slate-200 border-slate-800 hover:border-slate-700'
+              }`}
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-navy-950 border border-slate-800 flex items-center justify-center text-cyan-400 shadow-inner">
-                    {getFeatureIcon(feat.icon)}
-                  </div>
-                  {getStatusBadge(feat.status)}
-                </div>
+              <span className="font-mono text-[11px] opacity-80">#{idx + 1}</span>
+              <span>{feat.title.split(' ')[0]} {feat.title.split(' ')[1] || ''}</span>
+            </button>
+          ))}
+        </div>
 
-                <div className="text-[11px] font-mono text-cyan-400 font-semibold uppercase tracking-wider mb-1">
-                  {feat.category} • {feat.badge}
-                </div>
-
-                <h3 className="text-lg font-bold text-white mb-2">
-                  {feat.title}
-                </h3>
-
-                <p className="text-sm text-slate-300 leading-relaxed">
-                  {feat.description}
-                </p>
+        {/* Focused Interactive Feature Card */}
+        <div className="glass-panel rounded-3xl p-6 sm:p-10 border-slate-700/70 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+          
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/80 mb-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-navy-950 border border-slate-800 flex items-center justify-center text-cyan-400 shadow-inner shrink-0">
+                {getFeatureIcon(current.icon)}
               </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                <span className="font-mono">Module Verified</span>
-                <span className="text-emerald-400 font-medium flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  Active in Repo
-                </span>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">
+                    Capability 0{currentIndex + 1} of 0{features.length}
+                  </span>
+                  <span className="text-slate-600 text-xs">•</span>
+                  <span className="text-xs font-mono text-slate-400">
+                    {current.category}
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                  {current.title}
+                </h3>
               </div>
             </div>
-          ))}
+
+            <div className="self-start sm:self-auto">
+              {getStatusBadge(current.status)}
+            </div>
+          </div>
+
+          <p className="text-base text-slate-300 leading-relaxed mb-8">
+            {current.description}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800 mb-8">
+            <div className="p-4 rounded-2xl bg-navy-950/90 border border-slate-800/80">
+              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                Classification & Badge
+              </span>
+              <span className="text-sm font-semibold text-cyan-300 font-mono">
+                {current.category} • {current.badge}
+              </span>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-navy-950/90 border border-slate-800/80">
+              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block mb-1">
+                Implementation State
+              </span>
+              <span className="text-sm font-semibold text-emerald-400 flex items-center gap-1.5 font-mono">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Verified in SmartAttend Repo</span>
+              </span>
+            </div>
+          </div>
+
+          {/* Navigation Controls: Previous / Next */}
+          <div className="flex items-center justify-between pt-2">
+            <button
+              onClick={handlePrev}
+              className="btn-secondary text-xs sm:text-sm py-2.5 px-4 flex items-center gap-1.5"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              <span>Previous Capability</span>
+            </button>
+
+            {/* Indicator Dots */}
+            <div className="hidden sm:flex gap-1.5">
+              {features.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2 rounded-full transition-all ${
+                    currentIndex === idx ? 'w-6 bg-cyan-400' : 'w-2 bg-slate-700 hover:bg-slate-600'
+                  }`}
+                  aria-label={`Jump to capability ${idx + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="btn-primary text-xs sm:text-sm py-2.5 px-4 flex items-center gap-1.5"
+            >
+              <span>Next Capability</span>
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+
         </div>
 
       </div>

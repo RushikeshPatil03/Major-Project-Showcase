@@ -34,7 +34,7 @@ export const TeamSection: React.FC = () => {
               className="glass-panel glass-panel-hover p-6 rounded-3xl border-slate-700/60 flex flex-col justify-between"
             >
               <div>
-                {/* Photo or Initials Avatar */}
+                {/* Photo */}
                 <div className="relative mb-5 flex justify-center">
                   <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-500 via-blue-600 to-emerald-400 shadow-xl shadow-cyan-500/10">
                     {member.photo ? (
@@ -43,7 +43,6 @@ export const TeamSection: React.FC = () => {
                         alt={member.name}
                         className="w-full h-full object-cover rounded-xl"
                         onError={(e) => {
-                          // Graceful fallback to initial avatar if image fails
                           (e.target as HTMLElement).style.display = 'none';
                         }}
                       />
@@ -52,39 +51,30 @@ export const TeamSection: React.FC = () => {
                         <span className="text-2xl font-bold font-mono tracking-wider">
                           {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                         </span>
-                        <span className="text-[10px] font-mono text-slate-500 mt-1 uppercase">
-                          Photo Pending
-                        </span>
                       </div>
                     )}
                   </div>
-
-                  <span className="absolute bottom-0 right-1/2 translate-x-12 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-navy-950 text-cyan-400 border border-slate-700 shadow">
-                    USN {member.usn.slice(-3)}
-                  </span>
                 </div>
 
                 {/* Member Info */}
-                <div className="text-center mb-4">
+                <div className="text-center mb-6">
                   <h3 className="text-lg font-bold text-white tracking-tight">
                     {member.name}
                   </h3>
-                  <div className="text-xs font-mono text-cyan-400 font-medium mt-0.5">
-                    {member.role}
+                  
+                  <div className="mt-1.5">
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold font-mono tracking-wide ${
+                      member.role === 'Team Leader'
+                        ? 'bg-amber-950/90 text-amber-300 border border-amber-700/80'
+                        : 'bg-navy-950 text-cyan-400 border border-slate-700/80'
+                    }`}>
+                      {member.role}
+                    </span>
                   </div>
-                  <div className="text-[11px] font-mono text-slate-400 mt-1">
-                    USN: {member.usn}
-                  </div>
-                </div>
 
-                {/* Key Contributions List */}
-                <div className="space-y-1.5 pt-3 border-t border-slate-800 mb-6">
-                  {member.contributions.map((c, cIdx) => (
-                    <div key={cIdx} className="flex items-start gap-2 text-xs text-slate-300">
-                      <span className="text-cyan-400 font-bold">•</span>
-                      <span className="leading-snug">{c}</span>
-                    </div>
-                  ))}
+                  <div className="text-xs font-mono text-slate-300 mt-2.5 font-medium">
+                    USN: <span className="text-cyan-300 font-bold">{member.usn}</span>
+                  </div>
                 </div>
               </div>
 

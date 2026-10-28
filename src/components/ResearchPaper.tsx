@@ -14,7 +14,7 @@ export const ResearchPaper: React.FC = () => {
 
   const bibtexCitation = `@inproceedings{smartattend2026,
   title={SmartAttend: A Spatial-Temporal Multi-Factor Verification Framework for Secure Attendance Management},
-  author={Varsha, K. and Patil, Rushikesh Subhash and Pramod, S. G. and Aradhana, D. and Shivamani, B. and Aravind, Srirama},
+  author={Varsha, K. and Patil, Rushikesh Subhash and Pramod, S. G. and Jagadish, R. M. and Shivamani, B. and Aravind, Srirama},
   booktitle={IEEE International Conference on Communication and Wireless Networks (ICCWN)},
   year={2026},
   organization={Ballari Institute of Technology and Management (BITM)},
@@ -66,7 +66,7 @@ export const ResearchPaper: React.FC = () => {
                 {projectConfig.title}
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mt-2">
-                <strong>Authors:</strong> Prof. Varsha K, Rushikesh Subhash Patil, Pramod S G, Dr. Aradhana D, Shivamani B, Srirama Aravind
+                <strong>Authors:</strong> Ms. Varsha K, Rushikesh Subhash Patil, Pramod S G, Dr. Jagadish RM, Shivamani B, Srirama Aravind
               </p>
             </div>
 

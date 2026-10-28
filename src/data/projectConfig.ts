@@ -2,8 +2,7 @@ export interface TeamMember {
   name: string;
   usn: string;
   role: string;
-  contributions: string[];
-  photo: string | null; // null triggers high-tech initial avatar
+  photo: string | null;
   email: string;
   linkedin: string;
   github?: string | null;
@@ -63,7 +62,7 @@ export interface ProjectConfig {
     duration: string;
     description: string;
     technology: string;
-    screenshot?: string;
+    checkpoint: string;
   }[];
   features: {
     id: string;
@@ -155,13 +154,8 @@ export const projectConfig: ProjectConfig = {
   team: [
     {
       name: "Rushikesh Patil",
-      usn: "3BR22CD042",
-      role: "Lead Architect & Full-Stack Engineer",
-      contributions: [
-        "Architected 4-tier zero-trust verification pipeline and HMAC dynamic QR engine",
-        "Engineered Node.js/Express API and Supavisor PostgreSQL transaction pooler",
-        "Designed student PWA scanner and faculty studio projection interface"
-      ],
+      usn: "3BR23CD077",
+      role: "Team Leader",
       photo: "./assets/team/rushikesh.jpg",
       email: "rushipatil7611@gmail.com",
       linkedin: "https://www.linkedin.com/in/rushikesh-patil-75166a315/",
@@ -169,13 +163,8 @@ export const projectConfig: ProjectConfig = {
     },
     {
       name: "S G Pramod",
-      usn: "3BR22CD037",
-      role: "Biometrics & Security Specialist",
-      contributions: [
-        "Implemented MediaPipe 468-point facial mesh landmark detection and liveness state machine",
-        "Configured FastApi/DeepFace FaceNet-512 high-dimensional embedding inference",
-        "Co-authored research methodology and automated load-testing verification suites"
-      ],
+      usn: "3BR23CD079",
+      role: "Team Member",
       photo: "./assets/team/pramod.jpeg",
       email: "pramupramod2360@gmail.com",
       linkedin: "https://www.linkedin.com/in/s-g-pramod-a62789296/",
@@ -183,27 +172,17 @@ export const projectConfig: ProjectConfig = {
     },
     {
       name: "Shivamani B",
-      usn: "3BR22CD048",
-      role: "Distributed Systems & Database Engineer",
-      contributions: [
-        "Architected Supabase PostgreSQL schema, RLS policies, and immutable cohort snapshots",
-        "Integrated Haversine ellipsoidal geofence boundary validation with GNSS telemetry",
-        "Structured stress-testing harnesses and proxy mitigation attack simulation data"
-      ],
-      photo: null, // High-tech styled initials avatar displayed automatically until photo supplied
+      usn: "3BR23CD089",
+      role: "Team Member",
+      photo: "./assets/team/shivamani.jpeg",
       email: "shivamanishiva56@gmail.com",
       linkedin: "https://www.linkedin.com/in/shivamani-b-31a781353/",
       github: null
     },
     {
       name: "Srirama Aravind",
-      usn: "3BR22CD051",
-      role: "Frontend UI/UX & PWA Engineer",
-      contributions: [
-        "Constructed responsive Progressive Web App with offline caching and native camera bindings",
-        "Built faculty attendance matrix editor, live WebSocket rosters, and CSV exports",
-        "Optimized mobile scan responsiveness across low-end Android and iOS devices"
-      ],
+      usn: "3BR23CD092",
+      role: "Team Member",
       photo: "./assets/team/aravind.jpeg",
       email: "123sriramaravind123@gmail.com",
       linkedin: "https://www.linkedin.com/in/srirama-aravind-asdfg/",
@@ -213,16 +192,16 @@ export const projectConfig: ProjectConfig = {
 
   mentors: [
     {
-      name: "Dr. ARADHANA D",
+      name: "Ms. Varsha K",
       role: "Project Guide",
-      designation: "Professor",
+      designation: "Assistant Professor",
       department: "Dept. of Computer Science & Engineering (Data Science)",
       institution: "Ballari Institute of Technology & Management"
     },
     {
-      name: "Prof. VARSHA K",
+      name: "Dr. Jagadish RM",
       role: "Project Coordinator",
-      designation: "Assistant Professor",
+      designation: "Professor",
       department: "Dept. of Computer Science & Engineering (Data Science)",
       institution: "Ballari Institute of Technology & Management"
     }
@@ -235,7 +214,7 @@ export const projectConfig: ProjectConfig = {
       duration: "0.0s - Instant",
       description: "Faculty launches an attendance session from the Projector Studio. The backend records room GNSS anchor coordinates, sets an enforcement perimeter (e.g., 30-50m), and freezes an immutable cohort snapshot.",
       technology: "React 19 Studio • Express API • PostgreSQL Snapshot",
-      screenshot: "./assets/figures/faculty_studio.png"
+      checkpoint: "Classroom Anchor Setup"
     },
     {
       step: 2,
@@ -243,7 +222,7 @@ export const projectConfig: ProjectConfig = {
       duration: "Rotates Every 1.0 – 3.0s",
       description: "The faculty display renders time-rotating visual tokens signed with HMAC-SHA256 and synchronized monotonic sequence counters. Tokens expire in seconds, rendering screenshots and video captures useless.",
       technology: "HMAC-SHA256 • Redis Nonces • Sub-second Expiry",
-      screenshot: "./assets/figures/faculty_studio.png"
+      checkpoint: "Anti-Screen Recording Token"
     },
     {
       step: 3,
@@ -251,7 +230,7 @@ export const projectConfig: ProjectConfig = {
       duration: "< 1.5s Execution",
       description: "The student opens the mobile PWA in class. The device fingerprint is checked against authorized registrations. The camera scans consecutive QR iterations within a tight sequence drift to prove real-time viewing.",
       technology: "PWA BarcodeDetector • IndexedDB Fingerprint Lock",
-      screenshot: "./assets/figures/qr_scanner.jpg"
+      checkpoint: "Live Co-Presence & Device Lock"
     },
     {
       step: 4,
@@ -259,7 +238,7 @@ export const projectConfig: ProjectConfig = {
       duration: "< 25.0 ms Compute",
       description: "The client acquires GPS coordinates filtered by accuracy and computes Haversine displacement from the classroom anchor. Concurrently, MediaPipe BlazeFace executes random directional liveness challenges.",
       technology: "Haversine Distance • MediaPipe Vision • FaceNet-512",
-      screenshot: "./assets/figures/face_liveness.jpg"
+      checkpoint: "Mock GPS & 2D Photo Rejection"
     },
     {
       step: 5,
@@ -267,7 +246,7 @@ export const projectConfig: ProjectConfig = {
       duration: "30.1 ms Total Latency",
       description: "The server verifies cryptographic grants, prevents concurrent double-taps via sliding locks, and records the verified attendance atomically. Supabase Realtime instantly pushes the update to the faculty roster.",
       technology: "Supavisor Pooler • Supabase Realtime WebSockets",
-      screenshot: "./assets/figures/attendance_marked.jpg"
+      checkpoint: "Immutable Audit Ledger"
     }
   ],
 

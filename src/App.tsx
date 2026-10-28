@@ -51,7 +51,7 @@ export const App: React.FC = () => {
         
         <Overview />
 
-        <HowItWorks onSelectImage={handleSelectImage} />
+        <HowItWorks />
 
         <Features />
 
@@ -59,7 +59,7 @@ export const App: React.FC = () => {
 
         <TechStack />
 
-        <DemoAndVideo onSelectImage={handleSelectImage} />
+        <DemoAndVideo />
 
         <ResearchPaper />
 

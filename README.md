@@ -72,12 +72,12 @@ To update links or details, open `src/data/projectConfig.ts`:
 - **Research Paper PDF:** `links.researchPaperPdf` (points to `public/assets/SmartAttend_Research_Paper.pdf`)
 - **Team Profiles:** `team` array (update names, USNs, LinkedIn URLs, GitHub URLs, or photos)
 
-### Adding or Updating Team Photos
-Place portrait images in `public/assets/team/`:
-- `rushikesh.jpg` — Rushikesh Patil
-- `pramod.jpeg` — S G Pramod
-- `aravind.jpeg` — Srirama Aravind
-- `shivamani.jpg` — Shivamani B *(When an authentic photo is available, drop it into `public/assets/team/` and set `photo: "./assets/team/shivamani.jpg"` in `projectConfig.ts`. Until then, an attractive initials avatar is rendered automatically).*
+### Team Profiles & Portraits
+All 4 authentic team portraits are configured in `public/assets/team/`:
+- `rushikesh.jpg` — Rushikesh Patil (Team Leader, USN: 3BR23CD077)
+- `pramod.jpeg` — S G Pramod (Team Member, USN: 3BR23CD079)
+- `shivamani.jpeg` — Shivamani B (Team Member, USN: 3BR23CD089)
+- `aravind.jpeg` — Srirama Aravind (Team Member, USN: 3BR23CD092)
 
 ---
 
@@ -126,17 +126,18 @@ The showcase includes a built-in banner QR tool accessible from the navigation b
 - [x] Linked official Google Drive research paper and bundled backup PDF
 - [x] Embedded verified YouTube project walkthrough video (`https://youtu.be/MfGXQ6VCg54`)
 - [x] Configured official team LinkedIn profiles for all 4 team members
-- [x] Configured real team photos for Rushikesh, Pramod, and Aravind
-- [x] Configured initials-based avatar for Shivamani pending photo drop-in
-- [ ] Push to `https://github.com/RushikeshPatil03/Major-Project-Showcase`
-- [ ] Enable GitHub Pages under **Settings &rarr; Pages &rarr; GitHub Actions**
-- [ ] Print banner QR code using the published URL (`https://rushikeshpatil03.github.io/Major-Project-Showcase/`)
+- [x] Configured authentic team portraits for Rushikesh, Pramod, Shivamani, and Aravind
+- [x] Updated USNs (Rushikesh: 3BR23CD077, Pramod: 3BR23CD079, Shivamani: 3BR23CD089, Aravind: 3BR23CD092)
+- [x] Configured Team Leader and Team Member roles
+- [x] Removed redundant project website screenshots (all diagrams available in paper)
+- [x] Deployed and active on GitHub Pages
+- [x] Scannable banner QR code verified (`https://rushikeshpatil03.github.io/Major-Project-Showcase/`)
 
 ---
 
 ## 🏛️ Academic Leadership & Mentorship
 
-- **Project Guide:** Dr. ARADHANA D, Professor, Dept. of CSE (Data Science), BITM
-- **Project Coordinator:** Prof. VARSHA K, Assistant Professor, Dept. of CSE (Data Science), BITM
+- **Project Guide:** Ms. Varsha K, Assistant Professor, Dept. of CSE (Data Science), BITM
+- **Project Coordinator:** Dr. Jagadish RM, Professor, Dept. of CSE (Data Science), BITM
 - **Department:** Department of Computer Science & Engineering (Data Science)
 - **Institution:** Ballari Institute of Technology & Management (BITM), Ballari
