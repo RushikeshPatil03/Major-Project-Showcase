@@ -6,7 +6,7 @@ export interface TeamMember {
   photo: string | null; // null triggers high-tech initial avatar
   email: string;
   linkedin: string;
-  github: string;
+  github?: string | null;
 }
 
 export interface Mentor {
@@ -47,7 +47,8 @@ export interface ProjectConfig {
     liveDemo: string;
     backendApi: string;
     youtubeVideoUrl: string;
-    youtubeVideoId: string; // e.g. "dQw4w9WgXcQ" or placeholder
+    youtubeVideoId: string;
+    researchPaperDriveUrl: string;
     researchPaperPdf: string;
     sourceCodeRepo: string;
     showcaseRepo: string;
@@ -115,9 +116,9 @@ export const projectConfig: ProjectConfig = {
   links: {
     liveDemo: "https://smartattend.app",
     backendApi: "https://smartattend-api-lpbx.onrender.com",
-    // When final YouTube video is published, place the YouTube Video ID below
-    youtubeVideoUrl: "https://www.youtube.com/watch?v=placeholder_smartattend",
-    youtubeVideoId: "", // Set e.g. "AbCdEf12345" once uploaded to YouTube
+    youtubeVideoUrl: "https://youtu.be/MfGXQ6VCg54?si=ltfN8TOBbsjsQz3z",
+    youtubeVideoId: "MfGXQ6VCg54",
+    researchPaperDriveUrl: "https://drive.google.com/file/d/1km5R-ymdWRwbTcEPnHTCaTiA5yW3ny3A/view?usp=sharing",
     researchPaperPdf: "./assets/SmartAttend_Research_Paper.pdf",
     sourceCodeRepo: "https://github.com/RushikeshPatil03/smartattend",
     showcaseRepo: "https://github.com/RushikeshPatil03/Major-Project-Showcase",
@@ -163,7 +164,7 @@ export const projectConfig: ProjectConfig = {
       ],
       photo: "./assets/team/rushikesh.jpg",
       email: "rushipatil7611@gmail.com",
-      linkedin: "https://www.linkedin.com/in/rushikesh-patil-97425825a/",
+      linkedin: "https://www.linkedin.com/in/rushikesh-patil-75166a315/",
       github: "https://github.com/RushikeshPatil03"
     },
     {
@@ -177,8 +178,8 @@ export const projectConfig: ProjectConfig = {
       ],
       photo: "./assets/team/pramod.jpeg",
       email: "pramupramod2360@gmail.com",
-      linkedin: "https://www.linkedin.com/in/pramod-s-g-72993b2a2/",
-      github: "https://github.com/RushikeshPatil03/smartattend"
+      linkedin: "https://www.linkedin.com/in/s-g-pramod-a62789296/",
+      github: null
     },
     {
       name: "Shivamani B",
@@ -191,8 +192,8 @@ export const projectConfig: ProjectConfig = {
       ],
       photo: null, // High-tech styled initials avatar displayed automatically until photo supplied
       email: "shivamanishiva56@gmail.com",
-      linkedin: "https://www.linkedin.com/in/shivamani-b-465a39281/",
-      github: "https://github.com/RushikeshPatil03/smartattend"
+      linkedin: "https://www.linkedin.com/in/shivamani-b-31a781353/",
+      github: null
     },
     {
       name: "Srirama Aravind",
@@ -205,8 +206,8 @@ export const projectConfig: ProjectConfig = {
       ],
       photo: "./assets/team/aravind.jpeg",
       email: "123sriramaravind123@gmail.com",
-      linkedin: "https://www.linkedin.com/in/srirama-aravind-4a6902263/",
-      github: "https://github.com/RushikeshPatil03/smartattend"
+      linkedin: "https://www.linkedin.com/in/srirama-aravind-asdfg/",
+      github: null
     }
   ],
 

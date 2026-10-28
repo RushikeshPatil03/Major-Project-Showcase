@@ -5,7 +5,8 @@ import {
   Copy, 
   Check, 
   BookOpen, 
-  BarChart3
+  BarChart3,
+  ExternalLink
 } from 'lucide-react';
 
 export const ResearchPaper: React.FC = () => {
@@ -71,13 +72,23 @@ export const ResearchPaper: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <a
-                href={projectConfig.links.researchPaperPdf}
+                href={projectConfig.links.researchPaperDriveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary text-xs py-3 px-5 flex items-center justify-center gap-2"
               >
+                <span>Access on Google Drive</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+
+              <a
+                href={projectConfig.links.researchPaperPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-xs py-3 px-5 flex items-center justify-center gap-2"
+              >
                 <Download className="w-4 h-4" />
-                <span>Download Paper (PDF)</span>
+                <span>Download PDF</span>
               </a>
             </div>
           </div>

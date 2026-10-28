@@ -15,6 +15,8 @@ Official public showcase website for our academic engineering major project:
 
 - **Live Showcase URL:** [https://rushikeshpatil03.github.io/Major-Project-Showcase/](https://rushikeshpatil03.github.io/Major-Project-Showcase/)
 - **Live Application Demo:** [https://smartattend.app](https://smartattend.app)
+- **Project Walkthrough Video:** [https://youtu.be/MfGXQ6VCg54](https://youtu.be/MfGXQ6VCg54)
+- **Research Paper (Google Drive):** [https://drive.google.com/file/d/1km5R-ymdWRwbTcEPnHTCaTiA5yW3ny3A/view?usp=sharing](https://drive.google.com/file/d/1km5R-ymdWRwbTcEPnHTCaTiA5yW3ny3A/view?usp=sharing)
 - **Main Application Source Repo:** [https://github.com/RushikeshPatil03/smartattend](https://github.com/RushikeshPatil03/smartattend)
 - **Showcase Source Repo:** [https://github.com/RushikeshPatil03/Major-Project-Showcase](https://github.com/RushikeshPatil03/Major-Project-Showcase)
 
@@ -121,12 +123,14 @@ The showcase includes a built-in banner QR tool accessible from the navigation b
 - [x] Verified institutional details: BITM Ballari, VTU Belagavi, CSE (Data Science)
 - [x] Verified live application demo URL (`https://smartattend.app`)
 - [x] Verified main Git source repository (`https://github.com/RushikeshPatil03/smartattend`)
-- [x] Bundled verified IEEE research paper PDF
+- [x] Linked official Google Drive research paper and bundled backup PDF
+- [x] Embedded verified YouTube project walkthrough video (`https://youtu.be/MfGXQ6VCg54`)
+- [x] Configured official team LinkedIn profiles for all 4 team members
 - [x] Configured real team photos for Rushikesh, Pramod, and Aravind
 - [x] Configured initials-based avatar for Shivamani pending photo drop-in
-- [ ] Add YouTube Video ID in `src/data/projectConfig.ts` once final video is uploaded
+- [ ] Push to `https://github.com/RushikeshPatil03/Major-Project-Showcase`
 - [ ] Enable GitHub Pages under **Settings &rarr; Pages &rarr; GitHub Actions**
-- [ ] Print banner QR code using the exact published URL
+- [ ] Print banner QR code using the published URL (`https://rushikeshpatil03.github.io/Major-Project-Showcase/`)
 
 ---
 

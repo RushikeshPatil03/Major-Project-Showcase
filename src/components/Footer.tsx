@@ -64,13 +64,13 @@ export const Footer: React.FC<FooterProps> = ({ onWatchVideoClick, onOpenQrModal
               </button>
 
               <a
-                href={projectConfig.links.researchPaperPdf}
+                href={projectConfig.links.researchPaperDriveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary text-xs sm:text-sm py-3 px-6"
               >
                 <FileText className="w-4 h-4 text-emerald-400" />
-                <span>Read Research Paper</span>
+                <span>Read Research Paper (Drive)</span>
               </a>
 
               <a

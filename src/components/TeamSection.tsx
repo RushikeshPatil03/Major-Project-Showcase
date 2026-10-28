@@ -100,15 +100,17 @@ export const TeamSection: React.FC = () => {
                   <LinkedinIcon className="w-4 h-4" />
                 </a>
 
-                <a
-                  href={member.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-xl bg-navy-950 text-slate-400 hover:text-white hover:bg-navy-900 border border-slate-800 transition-colors"
-                  aria-label={`${member.name} GitHub Repository`}
-                >
-                  <GithubIcon className="w-4 h-4" />
-                </a>
+                {member.github && (
+                  <a
+                    href={member.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-navy-950 text-slate-400 hover:text-white hover:bg-navy-900 border border-slate-800 transition-colors"
+                    aria-label={`${member.name} GitHub Profile`}
+                  >
+                    <GithubIcon className="w-4 h-4" />
+                  </a>
+                )}
 
                 <a
                   href={`mailto:${member.email}`}

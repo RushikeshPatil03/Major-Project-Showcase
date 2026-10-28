@@ -199,13 +199,13 @@ export const DemoAndVideo: React.FC<DemoAndVideoProps> = ({ onSelectImage }) => 
               </a>
 
               <a
-                href={projectConfig.links.researchPaperPdf}
+                href={projectConfig.links.researchPaperDriveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary w-full text-center py-3 text-xs flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4 text-emerald-400" />
-                <span>Download IEEE Research Paper (PDF)</span>
+                <span>Read Research Paper on Google Drive</span>
               </a>
             </div>
           </div>

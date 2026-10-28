@@ -102,13 +102,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQrModal }) => {
             </button>
 
             <a
-              href={projectConfig.links.researchPaperPdf}
+              href={projectConfig.links.researchPaperDriveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-navy-900/80 hover:bg-navy-800 border border-slate-700/80 flex items-center gap-1.5 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
             >
               <FileText className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Paper</span>
+              <span>Research Paper</span>
             </a>
 
             <a
@@ -168,13 +168,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQrModal }) => {
               Launch Live Demo
             </a>
             <a
-              href={projectConfig.links.researchPaperPdf}
+              href={projectConfig.links.researchPaperDriveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary w-full text-center py-2.5 text-sm"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Read Research Paper
+              Read Research Paper (Drive)
             </a>
           </div>
         </div>

@@ -95,13 +95,13 @@ export const Hero: React.FC<HeroProps> = ({ onWatchVideoClick, onOpenQrModal }) 
           </button>
 
           <a
-            href={projectConfig.links.researchPaperPdf}
+            href={projectConfig.links.researchPaperDriveUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary w-full sm:w-auto text-base px-7 py-3.5"
           >
             <FileText className="w-4 h-4 text-emerald-400" />
-            <span>Read Research Paper</span>
+            <span>Read Research Paper (Drive)</span>
           </a>
         </div>
 
